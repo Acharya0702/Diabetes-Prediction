@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes_Prediction</title>
+</head>
+<body>
+  <style>
+    body {
+    background-color: rgb(112, 22, 172);
+  }
+  h1 {
+  color: rgb(0, 247, 12);
+  text-align: center;
+  font-family: verdana;
+}
+h3 {
+  color: rgb(255, 255, 255);
+  font-family: 'Monospace';
+  font-size: 20px;
+}
+h2{
+  color: rgb(222, 247, 6);
+  font-family: 'Elephant';
+  font-size: 20px;
+  text-align: center;
+}
+  </style>
+    <h1>Diabetes Prediction</h1><br><hr>
+    <h3>
+      Diabetes mellitus, commonly known as diabetes, is a metabolic disease that causes high 
+      blood sugar. The hormone insulin moves sugar from the blood into your cells to be stored or used for energy. 
+      With diabetes, your body either doesn't make enough insulin or can't effectively use the insulin it does make.
+    </h3><hr>
+    <h2>Please insert <b>Glucose</b>, <b>SkinThickness</b>, <b>Insulin</b> and <b>Age</b> to check the prediction 
+      wheather you have Diabetes or not?</h2>
+<center>
+	<form action="{{ url_for('predict')}}"method="post">
+		<input type="text" name="f1" placeholder="Glucose" size="40"><br>
+		<br><input type="text" name="f2" placeholder="SkinThickness" size="40"><br>
+    <br><input type="text" name="f3" placeholder="Insulin" size="40"><br>
+		<br><input type="text" name="f4" placeholder="Age" size="40"><br><hr><br>
+		<input type="submit" value="Predict">
+  </form>
+</center>
+  <div class="card text-center" style="width:21.5em;margin:0 auto;">
+    <div class="card-body">
+      <p class="card text">
+      <h1>
+        {{prediction}}
+      </h1>
+      </p>
+    </div>
+</body>
+</html>
